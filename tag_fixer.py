@@ -11,9 +11,9 @@ vault_path = os.getenv("VAULT_PATH")
 # Pattern to match Obsidian-style tags (e.g., #Some-Tag/Value)
 tag_pattern = re.compile(r'#([\w/-]+)')
 
-# Function to normalize tag to lowercase with underscores
+# Function to normalize tag to lowercase with hyphens
 def normalize_tag(tag):
-    return re.sub(r'[^a-z0-9]+', '_', tag.lower()).strip('_')
+    return re.sub(r'[^a-z0-9]+', '-', tag.lower()).strip('-')
 
 # Replacer function with mutable flag
 def replacer(match, modified_flag):
